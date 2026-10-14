@@ -1,0 +1,31 @@
+{
+  "project_name": "eks-localstack",
+  "project_slug": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
+  "author": "Your Name",
+  "description": "EKS Kubernetes klaster na LocalStack pomoću Terraform-a i Terragrunts",
+  "aws_region": "us-east-1",
+  "localstack_endpoint": "http://localhost:4566",
+  "cluster_name": "{{ cookiecutter.project_slug }}-cluster",
+  "kubernetes_version": "1.30",
+  "instance_type": [
+    "t3.medium",
+    "t3.small",
+    "t3.large",
+    "t3a.medium"
+  ],
+  "environments": ["dev", "prod"],
+  "dev_vpc_cidr": "10.0.0.0/16",
+  "dev_public_subnet_cidr": "10.0.1.0/24",
+  "dev_private_subnet_cidr": "10.0.2.0/24",
+  "dev_node_desired": 1,
+  "dev_node_min": 1,
+  "dev_node_max": 2,
+  "prod_vpc_cidr": "10.1.0.0/16",
+  "prod_public_subnet_cidr": "10.1.1.0/24",
+  "prod_private_subnet_cidr": "10.1.2.0/24",
+  "prod_node_desired": 2,
+  "prod_node_min": 2,
+  "prod_node_max": 5,
+  "terraform_version": ">= 1.0",
+  "aws_provider_version": "~> 5.0"
+}

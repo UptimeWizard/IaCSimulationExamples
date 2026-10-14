@@ -1,0 +1,45 @@
+# Terraform state fajlovi
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform cache i lock fajlovi
+.terraform/
+.terraform.lock.hcl
+**/.terraform/
+**/.terraform.lock.hcl
+
+# Terragrunt cache
+.terragrunt-cache/
+**/.terragrunt-cache/
+
+# Generisani provider fajlovi (od Terragrunts)
+**/provider.tf
+
+# Terraform plan fajlovi
+*.tfplan
+*.plan
+
+# Crash log fajlovi
+crash.log
+crash.*.log
+
+# Override fajlovi
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lokalne varijable (mogu sadržati tajne)
+*.auto.tfvars
+terraform.tfvars
+
+# OS specifični fajlovi
+.DS_Store
+Thumbs.db
+
+# Editor fajlovi
+.idea/
+.vscode/
+*.swp
+*.swo

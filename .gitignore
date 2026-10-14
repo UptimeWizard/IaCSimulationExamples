@@ -1,0 +1,67 @@
+# =============================================================
+# Central .gitignore for IaCSimulationExamples
+# Covers all Terraform and Terragrunt projects in this repo.
+# Originally executed on: MacBook Air M3
+# =============================================================
+
+# Terraform
+
+## Local .terraform directories
+**/.terraform/*
+
+## Terraform state files — never commit these
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+## Crash log files
+crash.log
+crash.*.log
+
+## Exclude all .tfvars files (may contain sensitive data)
+*.tfvars
+*.tfvars.json
+
+## Ignore override files (used for local resource overrides)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+## Ignore transient lock info files created by Terraform
+.terraform.lock.hcl
+
+## Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+## Ignore plan output files
+*.tfplan
+
+# Terragrunt
+
+## Terragrunt cache directories
+**/.terragrunt-cache/*
+
+## Terragrunt generated files
+*.terragrunt-source-manifest
+
+## Ignore terragrunt plan files
+*.plan
+
+# General
+
+## OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+## Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

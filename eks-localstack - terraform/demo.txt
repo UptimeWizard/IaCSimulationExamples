@@ -1,0 +1,33 @@
+##########################
+##         DEMO
+# Originally executed on: MacBook Air M3
+# To make this reusable, navigate to the project directory relative to where you cloned it.
+# Replace <path-to-repo> with your own path, e.g.:
+#   cd "$HOME/Projects/IaCSimulationExamples/eks-localstack - terraform"
+#
+# Start Docker Desktop
+# Start localstack
+lstk start
+# Deploy the EKS simulation locally
+cd "$(dirname "$0")"   # run from the project root, or cd manually to this folder
+rm -rf .terraform*
+terraform init --reconfigure
+terraform plan
+
+# Check with aws cli if EKS cluster exists
+aws --endpoint-url=http://localhost:4566 eks ls
+
+# Create the EKS cluster
+terraform apply
+
+# Confirm with aws cli
+aws --endpoint-url=http://localhost:4566 eks ls
+
+# Confirm on localstack portal
+# https://app.localstack.cloud/inst/default/resources
+
+# Destroy the EKS cluster
+terraform destroy
+
+# Check with aws cli if s3 bucket exists
+aws --endpoint-url=http://localhost:4566 eks ls
